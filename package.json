@@ -1,0 +1,50 @@
+{
+  "name": "aws-nitro-enclaves-nsm-node",
+  "version": "0.0.1",
+  "description": "A Node.js addon for interacting with the Nitro Secure Module, which provides Nitro Enclaves with attestation capability.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": "https://github.com/wei-rong-1/aws-nitro-enclaves-nsm-node",
+  "keywords": [
+    "AWS Nitro Enclave",
+    "Nitro Secure Module",
+    "Attestation Document",
+    "NSM",
+    "node-addon"
+  ],
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
+  "napi": {
+    "name": "aws-nitro-enclaves-nsm-node",
+    "triples": {
+      "defaults": false,
+      "additional": [
+        "x86_64-unknown-linux-gnu",
+        "x86_64-unknown-linux-musl"
+      ]
+    }
+  },
+  "license": "MIT",
+  "scripts": {
+    "artifacts": "napi artifacts",
+    "build": "napi build --platform --release --pipe \"prettier -w\"",
+    "build:debug": "napi build --platform --pipe \"prettier -w\"",
+    "prepublishOnly": "napi prepublish -t npm",
+    "test": "ava",
+    "universal": "napi universal",
+    "version": "napi version"
+  },
+  "devDependencies": {
+    "@napi-rs/cli": "^2.15.2",
+    "prettier": "^2.8.8",
+    "ava": "^5.1.1"
+  },
+  "ava": {
+    "timeout": "3m"
+  },
+  "engines": {
+    "node": ">= 12"
+  }
+}
