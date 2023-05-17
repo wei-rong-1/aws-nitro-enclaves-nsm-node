@@ -1,3 +1,90 @@
-# aws-nitro-enclaves-nsm-node
+# `AWS Nitro Enclaves NSM for Node.js`
 
-A Node.js addon for interacting with the Nitro Secure Module, which provides Nitro Enclaves with attestation capability.
+![https://github.com/wei-rong-1/aws-nitro-enclaves-nsm-node/actions](https://github.com/wei-rong-1/aws-nitro-enclaves-nsm-node/workflows/CI/badge.svg)
+
+> A Node.js addon for interacting with the Nitro Secure Module, which provides Nitro Enclaves with attestation capability.
+
+## Features
+
+* PCR query and manipulation
+* Attestation
+* Entropy
+
+## Install this package
+
+```
+npm install --save aws-nitro-enclaves-nsm-node
+
+yarn add aws-nitro-enclaves-nsm-node
+```
+
+## Support OS
+
+|                  | node14 | node16 | node18 |
+| ---------------- | ------ | ------ | ------ |
+| Linux x64 gnu    | ✓      | ✓      | ✓      |
+| Linux x64 musl   | ✓      | ✓      | ✓      |
+
+
+## Methods
+
+**open**, alias `init`, Initialization function.
+
+**close**, alias `exit`, Exit function.
+
+**extendPcr**, NSM `ExtendPCR` operation.
+
+**getPcrDescription**, NSM `DescribePCR` operation.
+
+**lockPcr**, NSM `LockPCR` operation.
+
+**lockPcrs**, NSM `LockPCRs` operation.
+
+**getDescription**, NSM `Describe` operation.
+
+**getAttestationDoc**, NSM `GetAttestationDoc` operation.
+
+**getRandom**, NSM `GetRandom` operation. Returns up to 256 bytes of random data.
+
+## Examples
+
+````
+import {
+  open,
+  close,
+  extendPcr,
+  getPcrDescription,
+  lockPcr,
+  lockPcrs,
+  getDescription,
+  getAttestationDoc,
+  getRandom
+} from "aws-nitro-enclaves-nsm-node"
+
+const fd = open()
+
+// extendPcr
+// getPcrDescription
+// lockPcr
+// lockPcrs
+// getDescription
+// getAttestationDoc
+// getRandom
+
+close(fd)
+````
+
+## Develop requirements
+
+- Install the latest `Rust`
+- Install `Node.js@12+` which fully supported `Node-API v4`
+- Install `yarn@1.x`
+
+## How to build
+
+- yarn
+- yarn build
+
+## Lisence
+
+MIT
