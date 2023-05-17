@@ -2,13 +2,15 @@
 
 ![https://github.com/wei-rong-1/aws-nitro-enclaves-nsm-node/actions](https://github.com/wei-rong-1/aws-nitro-enclaves-nsm-node/workflows/CI/badge.svg)
 
-> A Node.js addon for interacting with the Nitro Secure Module, which provides Nitro Enclaves with attestation capability.
+> A Node.js addon for interacting with the Nitro Secure Module, which provides Nitro Enclaves with attestation capability. [napi-rs](https://napi.rs/) based, only for Linux.
 
 ## Features
 
 * PCR query and manipulation
 * Attestation
 * Entropy
+
+Please refer to [aws/aws-nitro-enclaves-nsm-api](https://github.com/aws/aws-nitro-enclaves-nsm-api).
 
 ## Install this package
 
