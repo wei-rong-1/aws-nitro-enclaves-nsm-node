@@ -7,34 +7,28 @@ export interface Description {
   versionMajor: number;
   versionMinor: number;
   versionPatch: number;
-  moduleId: Array<number>;
-  moduleIdLen: number;
+  moduleId: string;
   maxPcrs: number;
   lockedPcrs: Array<number>;
-  lockedPcrsLen: number;
   digest: string;
 }
 export interface PcrDescription {
   lock: boolean;
-  data: Array<number>;
+  data: Buffer;
 }
 export function open(): number;
 export function init(): number;
 export function close(fd: number): void;
 export function exit(fd: number): void;
-export function extendPcr(
-  fd: number,
-  index: number,
-  data: Array<number>
-): Array<number>;
+export function extendPcr(fd: number, index: number, data: Buffer): Buffer;
 export function getPcrDescription(fd: number, index: number): PcrDescription;
 export function lockPcr(fd: number, index: number): void;
 export function lockPcrs(fd: number, range: number): void;
 export function getDescription(fd: number): Description;
 export function getAttestationDoc(
   fd: number,
-  userData: Array<number>,
-  nonceData: Array<number>,
-  pubKeyData: Array<number>
-): Array<number>;
-export function getRandom(fd: number): Array<number>;
+  userData?: Buffer | undefined | null,
+  nonce?: Buffer | undefined | null,
+  publicKey?: Buffer | undefined | null
+): Buffer;
+export function getRandom(fd: number): Buffer;

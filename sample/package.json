@@ -1,0 +1,18 @@
+{
+  "name": "sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "preinstall": "./build.sh preinstall",
+    "build:all": "./build.sh all",
+    "build": "tsc -p tsconfig.json",
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "aws-nitro-enclaves-nsm-node": "file:./tmp/aws-nitro-enclaves-nsm-node.tgz"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
+}
