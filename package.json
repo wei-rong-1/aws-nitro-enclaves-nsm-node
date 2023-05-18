@@ -1,6 +1,6 @@
 {
   "name": "aws-nitro-enclaves-nsm-node",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Node.js addon for interacting with the Nitro Secure Module, which provides Nitro Enclaves with attestation capability.",
   "main": "index.js",
   "types": "index.d.ts",
