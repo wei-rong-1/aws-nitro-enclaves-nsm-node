@@ -70,8 +70,17 @@ const fd = open()
 // lockPcr
 // lockPcrs
 // getDescription
-// getAttestationDoc
 // getRandom
+
+const attestationDoc = getAttestationDoc(
+  fd,
+  Buffer.from("hello world"),
+  null, // nonce
+  Buffer.from("my public key"),
+)
+
+console.log(attestationDoc)
+
 
 close(fd)
 ````
