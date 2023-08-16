@@ -12,6 +12,8 @@
 
 Please refer to [aws/aws-nitro-enclaves-nsm-api](https://github.com/aws/aws-nitro-enclaves-nsm-api).
 
+For Attestation Document details, check the following document: [Nitro Enclaves Attestation Process](https://github.com/aws/aws-nitro-enclaves-nsm-api/blob/main/docs/attestation_process.md)
+
 ## Install this package
 
 ```
@@ -74,9 +76,9 @@ const fd = open()
 
 const attestationDoc = getAttestationDoc(
   fd,
-  Buffer.from("hello world"),
-  null, // nonce
-  Buffer.from("my public key"),
+  Buffer.from("hello world"),   // user data
+  null,                         // nonce
+  Buffer.from("my public key"), // public key
 )
 
 console.log(attestationDoc)
